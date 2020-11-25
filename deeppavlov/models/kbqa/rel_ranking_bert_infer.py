@@ -116,6 +116,7 @@ class RelRankerBertInfer(Component, Serializable):
                     answer_ids_input = [(answer_ids, question)]
                 parser_info_list = ["find_label" for i in range(len(answer_ids))]
                 answer_labels = self.wiki_parser(parser_info_list, answer_ids_input)
+                print("answer_labels", answer_labels)
                 if self.return_all_possible_answers:
                     answer = ', '.join(answer_labels)
                 else:
