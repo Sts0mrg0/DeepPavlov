@@ -53,8 +53,6 @@ class WikiParser:
 
     def __call__(self, parser_info_list: List[str], queries_list: List[Any]) -> List[Any]:
         wiki_parser_output = []
-        print("parser_info_list", parser_info_list)
-        print("queries_list", queries_list)
         for parser_info, query in zip(parser_info_list, queries_list):
             if parser_info == "query_execute":
                 *query_to_execute, return_if_found = query
@@ -65,9 +63,7 @@ class WikiParser:
             elif parser_info == "find_rels":
                 wiki_parser_output += self.find_rels(*query)
             elif parser_info == "find_label":
-                print("query", query)
                 label = self.find_label(*query)
-                print("found_label", label)
                 wiki_parser_output.append(self.find_label(*query))
             elif parser_info == "find_triplets":
                 if self.file_format == "hdt":
