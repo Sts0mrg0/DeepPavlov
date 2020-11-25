@@ -114,7 +114,7 @@ class RelRankerBertInfer(Component, Serializable):
                     answer_ids_input = [(answer_id, question) for answer_id in answer_ids]
                 else:
                     answer_ids_input = [(answer_ids, question)]
-                parser_info_list = ["find_label" for i in range(len(answer_ids))]
+                parser_info_list = ["find_label" for _ in answer_ids_input]
                 print("parser_info_list", parser_info_list, "answer_ids_input", answer_ids_input)
                 answer_labels = self.wiki_parser(parser_info_list, answer_ids_input)
                 print("answer_labels", answer_labels)
