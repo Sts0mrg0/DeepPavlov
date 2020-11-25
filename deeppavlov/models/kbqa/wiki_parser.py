@@ -63,6 +63,9 @@ class WikiParser:
             elif parser_info == "find_rels":
                 wiki_parser_output += self.find_rels(*query)
             elif parser_info == "find_label":
+                print("query", query)
+                label = self.find_label(*query)
+                print("found_label", label)
                 wiki_parser_output.append(self.find_label(*query))
             elif parser_info == "find_triplets":
                 if self.file_format == "hdt":
