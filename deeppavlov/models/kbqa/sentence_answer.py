@@ -121,9 +121,8 @@ def sentence_answer(question, entity_title):
         
     if answer.endswith('?'):
         answer = answer.replace('?', '').strip()
-        
+    
     who_is_question, entity_tokens = find_who_is_tokens(answer, noun_tokens)
-    print("answer", answer, "noun_tokens", noun_tokens, "who_is_question", who_is_question, "entity_tokens", entity_tokens)
         
     if question_replace_substr:
         if wh_node.text.lower() in ["what", "who"]:
