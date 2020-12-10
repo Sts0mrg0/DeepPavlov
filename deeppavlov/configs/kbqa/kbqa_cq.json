@@ -95,6 +95,7 @@
         "batch_size": 32,
         "load_path": "{DOWNLOADS_PATH}/wikidata_eng",
         "rel_q2name_filename": "wiki_dict_properties.pickle",
+        "return_sentence_answer": true,
         "in": ["x", "candidate_answers"],
         "out": ["answers"]
       }
